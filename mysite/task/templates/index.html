@@ -3,9 +3,16 @@ Hello World!
 
 <form method="POST">
     {% csrf_token %}
-    your name
+
     <input type="text" name="name"/></br>
-    your password
-    <input type="text" name="password"/></br>
+    
     <button type="submit">submit this</button>
 </form>
+
+<div>
+    {% for d in data %}
+        <li>
+            {{d.name}}
+        </li>
+    {% endfor %}
+</div>
