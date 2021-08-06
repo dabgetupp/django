@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from . import models
 
 
@@ -19,18 +19,20 @@ def about(req):
     return render(req, 'about.html')
 
 def update(request, id):
+    currentData = models.tugas.objects.filter(pk=id)
     if request.POST:
-        newname = request.POST['username']
-        models.tugas.objects.filter(pk=id). update(name=new_name)
-        redirect('/')
-    return render(request, 'index.html',{
-        'data': data,
+        new_name = req.POST['username']
+        currentData.update(name = new_name)
+        return redirect('/')
+
+    return render(request, 'update.html', {
+        'current_name' : currentData.first().name
     })
 
 def delete(request, id):
-    return render(request, 'index.html',{
-        'data': data,
-    })
+        models.tugas.objects.filter(pk=id).delete()
+        return redirect('/')
+    
 
 
 
