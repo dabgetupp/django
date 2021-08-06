@@ -9,10 +9,24 @@ Hello World!
     <button type="submit">submit this</button>
 </form>
 
+
 <div>
-    {% for d in data %}
-        <li>
-            {{d.name}}
-        </li>
+    <table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>action</th>
+    </tr>
+
+        {% for d in data %}
+        <tr>
+        
+            <td>{{ d.pk }}</td>
+            <td>{{ d.name }}</td>
+            <td>
+            <a href="update/{{ d.pk }}">update</a>
+            </td>
+        </tr>
     {% endfor %}
+    </table>
 </div>
