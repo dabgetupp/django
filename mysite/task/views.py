@@ -21,7 +21,7 @@ def about(req):
 def update(request, id):
     currentData = models.tugas.objects.filter(pk=id)
     if request.POST:
-        new_name = req.POST['username']
+        new_name = request.POST['username']
         currentData.update(name = new_name)
         return redirect('/')
 
