@@ -5,5 +5,7 @@ def index(request):
     context = {
         'judul' :'blog',
         'subjudul' :'ini adalah blog praxis academy',
+        'banner':'blog/img/banner_blog.png',
+        'app_css':'blog/css/style.css',
     }
-    return render(request,'blog/index.html',context)
+    return render(request,'index.html',context)
