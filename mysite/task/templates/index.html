@@ -3,14 +3,14 @@ Hello World!
 
 <form method="POST">
     {% csrf_token %}
-
+    <title>Praxis</title>
     <input type="text" name="name"/></br>
     
     <button type="submit">submit this</button>
 </form>
 
 
-<div>
+<div style="background-color: blue; size: 120px;">
     <table>
     <tr>
         <th>id</th>
@@ -24,8 +24,8 @@ Hello World!
             <td>{{ d.pk }}</td>
             <td>{{ d.name }}</td>
             <td>
-            <a href="update/{{ d.pk }}">update</a> 
-            <a href="delete/{{ d.pk }}"> delete</a>
+            <a href="update/{{ d.pk }}" style="">update</a> 
+            <a href="delete/{{ d.pk }}">delete</a>
             </td>
         </tr>
     {% endfor %}
