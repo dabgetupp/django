@@ -1,8 +1,17 @@
 from django.shortcuts import redirect, render
 from . import models
+import psycopg2
+
 
 
 # Create your views here.
+def index(req):
+    conn = psycopg2.connect(
+        host="localhost",
+        database="task",
+        user="postgres",
+        password="1qaz"
+        )
 
 def index(request):   
     data = models.tugas.objects.all()
