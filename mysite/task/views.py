@@ -13,6 +13,13 @@ def index(req):
         password="1qaz"
         )
 
+    curr = conn.cursor()
+    cur.callproc('task', (id))
+    row = cur.fetchone()
+    while row is not None:
+        print(row)
+        row = cur.fetchone()
+
 def index(request):   
     data = models.tugas.objects.all()
     contoh ="welcome back"
